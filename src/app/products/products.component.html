@@ -1,0 +1,52 @@
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+<div class="item">
+<a (click)="filter('')">
+    <img src="assets/allMedicines.jpg" alt="image not found">
+    <h6>All Products</h6>
+</a>
+</div>
+<div class="item">
+    <a (click)="filter('Tablets')">
+        <img src="assets/tablet.jpg" alt="image not found">
+        <h6>Tablets</h6>
+    </a>
+</div>
+<div class="item">
+    <a (click)="filter('Syrup')">
+        <img src="assets/syrup.jpg" alt="image not found">
+        <h6>Syrup</h6>
+    </a>
+</div>
+<div class="item">
+    <a (click)="filter('Medicine Accessories')">
+        <img src="assets/medicineAccessories.jpg" alt="image not found">
+        <h6>Medicine Accessories</h6>
+    </a>
+</div>
+
+    </div>
+</div>
+
+
+
+ <div class="container">
+
+    <div class="row">
+     
+        <ng-container *ngFor= "let item of filterCategory | filter:searchKey:'title'">
+        <div class ="card col-md-3">
+     <img src="item.image" alt=""> 
+   <!-- we use ellipsis -> use when we have large text and wamt to show somof them followed by three dots  -->
+     <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.title}}</h5>
+     <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.description}}</p>
+     <p><strong>&#x20B9;{{item.price}}</strong></p>
+     <button class="btn btn-dark" (click)="addtocart(item)" >Add To Cart</button>
+        </div>
+    </ng-container>
+    </div>
+</div>
+
+
+
+

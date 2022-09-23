@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+               <div class="text-center ">
+                <h1>Register Here</h1>
+                <h6>Please enter below details</h6>
+               </div> 
+               <form [formGroup]= "registerForm" (ngSubmit) ="onRegister()">
+               
+                    <div class="form-group">
+                      <label  for="firstName" >First Name</label>
+                      <input formControlName= "firstName" [ngClass]= "{'is-invalid':submitted && registerForm.controls.firstName.errors}" type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="Enter First Name"
+                      [(ngModel)] = "user.firstName" name="firstName">
+                      <div *ngIf= "submitted && registerForm.controls.firstName.errors" class="text-danger">
+                        <div *ngIf= "submitted && registerForm.controls.firstName.errors.required">
+                        First Name is required
+                        </div>
+                              </div>
+                    </div>
+  
+                    <div class="form-group">
+                      <label for="lastName" >Last Name</label>
+                      <input formControlName= "lastName" [ngClass]= "{'is-invalid':submitted && registerForm.controls.lastName.errors}" type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Enter Last Name"
+                      [(ngModel)] = "user.lastName" name="lastName">
+                      <div *ngIf= "submitted && registerForm.controls.lastName.errors" class="text-danger">
+                        <div *ngIf= "submitted && registerForm.controls.lastName.errors.required">
+                        Last Name is required
+                        </div>
+                              </div>
+                    </div>
+  
+                    <div class="form-group">
+                      <label for="userName" >User Name</label>
+                      <input formControlName= "userName" [ngClass]= "{'is-invalid':submitted && registerForm.controls.userName.errors}" type="text" class="form-control" id="userName" aria-describedby="userName" placeholder="Enter User Name"
+                      [(ngModel)] = "user.userName" name="userName">
+                      <div *ngIf= "submitted && registerForm.controls.userName.errors" class="text-danger">
+                        <div *ngIf= "submitted && registerForm.controls.userName.errors.required">
+                      User Name is required
+                        </div>
+                              </div>
+                    </div>
+  
+  
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input formControlName= "password" [ngClass]= "{'is-invalid':submitted && registerForm.controls.password.errors}" type="password" class="form-control" id="password" placeholder="Password"
+                      [(ngModel)] = "user.password" name="password">
+                      <div *ngIf= "submitted && registerForm.controls.password.errors" class="text-danger">
+                        <div *ngIf= "submitted && registerForm.controls.password.errors.required">
+                     Password is required
+                        </div>
+                              </div>
+                    </div>
+                    
+  
+                    <div class="form-group">
+                      <label for="emailId" >Email Id</label>
+                      <input formControlName= "emailId" [ngClass]= "{'is-invalid':submitted && registerForm.controls.emailId.errors}" type="email" class="form-control" id="emailId" aria-describedby="emailId" placeholder="Enter Email Id"
+                      [(ngModel)] = "user.emailId" name="emailId">
+                      <div *ngIf= "submitted && registerForm.controls.emailId.errors" class="text-danger">
+                        <div *ngIf= "submitted && registerForm.controls.emailId.errors.required">
+                     Email ID is required
+                        </div>
+                              </div>
+                    </div>
+  
+                    <div class="form-group">
+                      <label for="address" >Address</label>
+                      <input formControlName= "address" [ngClass]= "{'is-invalid':submitted && registerForm.controls.address.errors}" type="text" class="form-control" id="address" aria-describedby="address" placeholder="Enter Valid Address"
+                      [(ngModel)] = "user.address" name="address" >
+                      <div *ngIf= "submitted && registerForm.controls.address.errors" class="text-danger">
+                        <div *ngIf= "submitted && registerForm.controls.address.errors.required">
+                    Address is required
+                        </div>
+                              </div>
+                    </div>
+  
+                    <button type="submit" class="btn btn-outline-light">Register</button><br><br>
+  
+                    <a routerLink="/login"> Already have a acoount ? Click to Login!!</a>
+  
+                  </form>
+  
+               
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  

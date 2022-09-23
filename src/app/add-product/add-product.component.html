@@ -1,0 +1,63 @@
+<div
+  class="bg-image"
+  style="
+    background-image: url('https://media.istockphoto.com/photos/black-stethoscope-on-blue-background-picture-id1179610553?k=20&m=1179610553&s=170667a&w=0&h=rdYywi_4mFpMiH2cgdGXvGRb-_R78Mdycsl--DQCg9g=');
+    height: 100vh;
+  ">
+
+<div class="col-md-6 offset-md-3">
+    <h3 >Create Medicine</h3>
+    <form (ngSubmit)="onSubmit()">
+    
+    <div class="formGroup">
+    <label>Title</label>
+    <input type="text" class="form-control" id="title"
+    [(ngModel)] = "product.title" name="title">
+    </div>
+    <br>
+      <div class="formGroup">
+        <label>Price</label>
+        <input type="text" class="form-control" id="Price"
+        [(ngModel)] = "product.price" name="Price">
+        </div>
+        <br>
+       
+    <div class="formGroup">
+            <label>Description</label>
+            <input type="text" class="form-control" id="description"
+            [(ngModel)] = "product.description" name="description">
+            </div>
+            <br>
+
+
+
+        
+
+
+    <div class="formGroup">
+            <label>Category</label>
+             <input type="text" class="form-control" id="category"
+            [(ngModel)] = "product.category" name="category">
+            </div>
+            <br> 
+
+<!-- --------------------------------------------------------------------------------------------------------- -->
+
+     <!-- <div class="formGroup">
+             <label>Please Upload Image</label>
+             <input type="file" class="form-control" accept="image/*" (change)="onFileSelected($event) " style="height: 100%;"
+             id="image"  [(ngModel)] = "product.image" name="image" >
+           
+             </div>       
+            <br>  -->
+
+<!--      ---------------------------------------------------------------------------------------------------------       -->
+             
+<br>
+
+              <button  class="btn btn-outline-success" type="submit">Submit</button>
+              <button routerLink="/admin-home" style="margin-left: 10px;" class="btn btn-outline-dark">Back</button>
+    </form>
+    
+    </div>
+</div>
